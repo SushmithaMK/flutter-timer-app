@@ -104,8 +104,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Row(
                 children: <Widget>[
-                  RaisedButton(
-                    child: Text("press 1"),
+                  FloatingActionButton.extended(
+                    label: Text("press"),
                     onPressed: () {
                       setState(() {
                         if(isTimerRunning==true)
@@ -115,8 +115,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       });
                     },
                   ),
-                  RaisedButton(
-                    child: Text("press 1"),
+                  FloatingActionButton.extended(
+                    label: Text("press"),
                     onPressed: () {
                       setState(() {
                         if(isTimerRunning==true)
@@ -130,6 +130,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               ),
               Text(max),
+              RaisedButton(
+                child:Text("reset"),
+              onPressed: (){
+                  setState((){
+                  _start=20;
+                  player_1_tap=0;
+                  player_2_tap=0;
+                });
+              },
+              )
             ]))
         );
   }
